@@ -1,0 +1,92 @@
+{
+  "name": "electron-template",
+  "version": "1.0.0",
+  "description": "快速打包web页面到电脑应用程序",
+  "main": "main.js",
+  "scripts": {
+    "electron": "electron .",
+    "dist:win": "electron-builder --ia32",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux"
+  },
+  "keywords": [
+    "electron",
+    "app",
+    "windows",
+    "mac",
+    "linux"
+  ],
+  "author": "shoujian",
+  "license": "MIT",
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron": "11.1.1",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {},
+  "repository": "",
+  "build": {
+    "productName": "electron-template",
+    "appId": "com.electron.app",
+    "copyright": "electron-template",
+    "compression": "store",
+    "directories": {
+      "output": "out"
+    },
+    "asar": false,
+    "files": [
+      "main.js",
+      "preload.js",
+      "public/index.html"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "guid": "app",
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./public/favicon.ico",
+      "uninstallerIcon": "./public/uninstall.ico",
+      "installerHeaderIcon": "./public/favicon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "electron-template",
+      "license": "LICENSE.txt",
+      "runAfterFinish": true
+    },
+    "win": {
+      "icon": "public/favicon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "public/favicon.png",
+      "category": "./out"
+    },
+    "linux": {
+      "icon": "public/favicon.png",
+      "category": "./out"
+    }
+  }
+}
