@@ -4,6 +4,15 @@
 
 本仓库诞生的目的是解决从web网站搬到到电脑应用程序的问题,可打包windows,mac和linux,且操作简单
 
+## 快速上手
+
+```shell
+npm --registry https://registry.npm.taobao.org install
+npm run dist:win
+```
+
+打包号后的文件在当前目录的out文件夹下  
+
 ## 操作说明
 
 1. 把package.json和main.js里面的electron-template全部替换成你需要的名字,把public目录下的图标全部换成你的图标,注意图片格式
@@ -16,8 +25,7 @@
 4. 不建议使用网络加载的模式引入应用程序内容,如果非要通过url加载内容,需要在main.js里将```mainWindow.loadURL(`file://${__dirname}/public/index.html`);```替换成```mainWindow.loadURL("put your url here");```.
 注意:如果对方没有网络,那么你的应用程序打开就会白屏
 
-5. 打包,不同平台的包只能去不同平台去打包,比如打mac版本的包,需要在mac电脑上打包,打linux包需要在linux系统上打包,但linux的包同时使用ubuntu和redHat两个linux分支版本  
-打包号后的文件在当前目录的out文件夹下  
+5. 打包,不同平台的包只能去不同平台去打包,比如打mac版本的包,需要在mac电脑上打包,打linux包需要在linux系统上打包,但linux的包同时适用ubuntu和redHat两个linux分支版本  
 
 ```windows```
 
@@ -34,7 +42,6 @@ npm run dist:mac
 ```linux```  
 
 ```shell
-
 npm run dist:linux
 ```
 
@@ -51,6 +58,14 @@ npm run dist:linux
 ## electron官网
 
 [https://www.electronjs.org/](https://www.electronjs.org/)
+
+## 关联链接
+
+[快速打包web页面到移动端app](https://github.com/zhoushoujian/cordova-template)  
+
+[express + mongodb + redis + jwt + typescript项目模板](https://github.com/zhoushoujian/typescript-express-templates)  
+
+[React + Redux + typescript项目模板](https://github.com/zhoushoujian/typescript-react-templates)  
 
 ## License
 
