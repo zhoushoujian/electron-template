@@ -59,6 +59,17 @@ npm run dist:linux
 
 [https://www.electronjs.org/](https://www.electronjs.org/)
 
+## 效果预览
+
+```windows```  
+![windows](./docs/windows.png)  
+
+```mac```  
+![mac](./docs/mac.png)  
+
+```linux```  
+![linux](./docs/linux.png)  
+
 ## 关联链接
 
 [快速打包web页面到移动端app](https://github.com/zhoushoujian/cordova-template)  
