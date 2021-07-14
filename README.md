@@ -2,7 +2,7 @@
 
 ## 诞生背景
 
-本仓库诞生的目的是解决从web网站搬到到电脑应用程序的问题,可打包windows,mac和linux,且操作简单
+本仓库诞生的目的是解决从 web 网站搬到到电脑应用程序的问题,可打包 windows,mac 和 linux,且操作简单
 
 ## 快速上手
 
@@ -11,41 +11,41 @@ npm --registry https://registry.npm.taobao.org install
 npm run dist:win
 ```
 
-打包号后的文件在当前目录的out文件夹下  
+打包好后的文件在当前目录的 out 文件夹下
 
 ## 操作说明
 
-1. 把package.json和main.js里面的electron-template全部替换成你需要的名字,把public目录下的图标全部换成你的图标,注意图片格式
+1. 把 package.json 和 main.js 里面的 electron-template 全部替换成你需要的名字,把 public 目录下的图标全部换成你的图标,注意图片格式
 
-2. 安装依赖环境: ```npm --registry https://registry.npm.taobao.org install```  
-如果遇到安装失败或者打包后闪退的问题,请重新安装electron  
+2. 安装依赖环境: `npm --registry https://registry.npm.taobao.org install`  
+   如果遇到安装失败或者打包后闪退的问题,请重新安装 electron
 
-3. 把你需要打包的网站静态文件放到public目录下,网站静态文件的入口是index.html,一定要覆盖public目录下原来的index.html文件
+3. 把你需要打包的网站静态文件放到 public 目录下,网站静态文件的入口是 index.html,一定要覆盖 public 目录下原来的 index.html 文件
 
-4. 不建议使用网络加载的模式引入应用程序内容,如果非要通过url加载内容,需要在main.js里将```mainWindow.loadURL(`file://${__dirname}/public/index.html`);```替换成```mainWindow.loadURL("put your url here");```.
-注意:如果对方没有网络,那么你的应用程序打开就会白屏
+4. 不建议使用网络加载的模式引入应用程序内容,如果非要通过 url 加载内容,需要在 main.js 里将`` mainWindow.loadURL(`file://${__dirname}/public/index.html`); ``替换成`mainWindow.loadURL("put your url here");`.
+   注意:如果对方没有网络,那么你的应用程序打开就会白屏
 
-5. 打包,不同平台的包只能去不同平台去打包,比如打mac版本的包,需要在mac电脑上打包,打linux包需要在linux系统上打包,但linux的包同时适用ubuntu和redHat两个linux分支版本  
+5. 打包,不同平台的包只能去不同平台去打包,比如打 mac 版本的包,需要在 mac 电脑上打包,打 linux 包需要在 linux 系统上打包,但 linux 的包同时适用 ubuntu 和 redHat 两个 linux 分支版本
 
-```windows```
+`windows`
 
 ```shell
 npm run dist:win
 ```
 
-```mac```  
+`mac`
 
 ```shell
 npm run dist:mac
 ```
 
-```linux```  
+`linux`
 
 ```shell
 npm run dist:linux
 ```
 
-## electron应用案例
+## electron 应用案例
 
 [Visual Studio Code](https://www.electronjs.org/apps/visual-studio-code)  
 [postman](https://www.electronjs.org/apps/postman)  
@@ -55,32 +55,32 @@ npm run dist:linux
 [Atom](https://www.electronjs.org/apps/atom)  
 [更多案例](https://www.electronjs.org/apps)
 
-## electron官网
+## electron 官网
 
 [https://www.electronjs.org/](https://www.electronjs.org/)
 
 ## 效果预览
 
-```windows```  
-![windows](./docs/windows.png)  
+`windows`  
+![windows](./docs/windows.png)
 
-```mac```  
-![mac](./docs/mac.png)  
+`mac`  
+![mac](./docs/mac.png)
 
-```linux```  
-![linux](./docs/linux.png)  
+`linux`  
+![linux](./docs/linux.png)
 
 ## 关联链接
 
-[快速打包web页面到移动端app](https://github.com/zhoushoujian/cordova-template)  
+[快速打包 web 页面到移动端 app](https://github.com/zhoushoujian/cordova-template)
 
-[express + mongodb + redis + jwt + typescript项目模板](https://github.com/zhoushoujian/typescript-express-templates)  
+[express + mongodb + redis + jwt + typescript 项目模板](https://github.com/zhoushoujian/typescript-express-templates)
 
-[React + Redux + typescript项目模板](https://github.com/zhoushoujian/typescript-react-templates)  
+[React + Redux + typescript 项目模板](https://github.com/zhoushoujian/typescript-react-templates)
 
-[nextjs + redux + express + less服务端渲染项目模板](https://github.com/zhoushoujian/nextjs)
+[nextjs + redux + express + less 服务端渲染项目模板](https://github.com/zhoushoujian/nextjs)
 
-[taro小程序项目模板](https://github.com/zhoushoujian/taro)
+[taro 小程序项目模板](https://github.com/zhoushoujian/taro)
 
 ## License
 
