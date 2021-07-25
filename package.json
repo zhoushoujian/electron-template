@@ -4,10 +4,11 @@
   "description": "快速打包web页面到电脑应用程序",
   "main": "main.js",
   "scripts": {
-    "electron": "electron .",
-    "dist:win": "electron-builder --ia32",
-    "dist:mac": "electron-builder --mac",
-    "dist:linux": "electron-builder --linux"
+    "dev": "cross-env NODE_ENV=development electron .",
+    "start": "cross-env NODE_ENV=develop electron .",
+    "dist:win": "cross-env NODE_ENV=production electron-builder --ia32",
+    "dist:mac": "cross-env NODE_ENV=production electron-builder --mac",
+    "dist:linux": "cross-env NODE_ENV=production electron-builder --linux"
   },
   "keywords": [
     "electron",
@@ -19,11 +20,14 @@
   "author": "shoujian",
   "license": "MIT",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "devtron": "^1.4.0",
     "electron": "11.1.1",
     "electron-builder": "22.9.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "console-format": "^1.1.0"
+  },
   "repository": "",
   "build": {
     "productName": "electron-template",
@@ -33,7 +37,7 @@
     "directories": {
       "output": "out"
     },
-    "asar": false,
+    "asar": true,
     "files": [
       "main.js",
       "preload.js",

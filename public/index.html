@@ -44,6 +44,14 @@
             clip-path: circle(22% at 70% 90%);
         }
 
+        header {
+            height: 36px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            -webkit-app-region: drag;
+        }
+
         .container {
             max-width: 80%;
             max-height: 80%;
@@ -65,6 +73,12 @@
             width: 342px;
             max-width: 100%;
             max-height: 100%;
+        }
+
+        .blueball {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .blueball1 {
@@ -91,6 +105,12 @@
             left: 240px;
             z-index: 2;
             animation: bball2 6s infinite;
+        }
+
+        .text {
+            color: #fff;
+            font-size: 32px;
+            margin-top: 140px;
         }
 
         @keyframes bball1 {
@@ -170,11 +190,13 @@
 </head>
 
 <body>
+    <header></header>
     <div class="container">
         <div class="calculator">
             <div class="blueball">
                 <div class="blueball1"></div>
                 <div class="blueball2"></div>
+                <div class="text">put your txt here</div>
             </div>
         </div>
     </div>
