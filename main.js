@@ -50,6 +50,19 @@ function createWindow() {
     }
   }
 
+  mainWindow.setOverlayIcon(path.join(__dirname, "./public/favicon.png"), 'Description for overlay')
+
+  app.setUserTasks([
+    {
+      program: process.execPath,
+      arguments: '--new-window',
+      iconPath: process.execPath,
+      iconIndex: 0,
+      title: 'New Window',
+      description: 'Create a new window'
+    }
+  ])
+
   globalShortcut.register("ESC", function () {
     mainWindow.setFullScreen(false);
   });
