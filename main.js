@@ -39,13 +39,11 @@ function createWindow() {
     //if you want to debug electron, set debug to true
     mainWindow.loadURL("http://localhost:9000");
     mainWindow.webContents.openDevTools();
-    require("devtron").install();
     mainWindow.maximize();
   } else {
     mainWindow.loadURL(`file://${__dirname}/public/index.html`);
     if (process.env.NODE_ENV === "develop") {
       mainWindow.webContents.openDevTools();
-      require("devtron").install();
       mainWindow.maximize();
     }
   }
