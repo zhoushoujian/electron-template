@@ -1,5 +1,9 @@
 # electron-template
 
+## 写在前面
+
+为了打包体积尽可能的小，所以electron使用了较低的版本，如需使用高版本的electron，自行升级electron版本
+
 ## 诞生背景
 
 本仓库诞生的目的是解决从 web 网站搬到到电脑应用程序的问题,可打包 windows,mac 和 linux,且操作简单
@@ -11,21 +15,19 @@ npm --registry https://registry.npm.taobao.org install
 npm run dist:win
 ```
 
-打包好后的文件在当前目录的 out 文件夹下
+打包好后的文件在项目根目录的 out 文件夹下
 
 ## 操作说明
 
-1. 把 package.json 和 main.js 里面的 electron-template 全部替换成你需要的名字,把 public 目录下的图标全部换成你的图标,注意图片格式
+1. 把 package.json 和 main.js 里面的 electron-template 全部替换成你需要的名字,把 my-app/public 目录下的图标全部换成你的图标,注意图片格式
 
 2. 安装依赖环境: `npm --registry https://registry.npm.taobao.org install`  
    如果遇到安装失败或者打包后闪退的问题,请重新安装 electron
 
-3. 把你需要打包的网站静态文件放到 public 目录下,网站静态文件的入口是 index.html,一定要覆盖 public 目录下原来的 index.html 文件
-
-4. 不建议使用网络加载的模式引入应用程序内容,如果非要通过 url 加载内容,需要在 main.js 里将`` mainWindow.loadURL(`file://${__dirname}/public/index.html`); ``替换成`mainWindow.loadURL("put your url here");`.
+3. 不建议使用网络加载的模式引入应用程序内容,如果非要通过 url 加载内容,需要在 main.js 里将`` mainWindow.loadURL(`file://${__dirname}/mya-pp/build/index.html`); ``替换成`mainWindow.loadURL("put your url here");`.
    注意:如果对方没有网络,那么你的应用程序打开就会白屏
 
-5. 打包,不同平台的包只能去不同平台去打包,比如打 mac 版本的包,需要在 mac 电脑上打包,打 linux 包需要在 linux 系统上打包,但 linux 的包同时适用 ubuntu 和 redHat 两个 linux 分支版本
+4. 打包,不同平台的包只能去不同平台去打包,比如打 mac 版本的包,需要在 mac 电脑上打包,打 linux 包需要在 linux 系统上打包,但 linux 的包同时适用 ubuntu 和 redHat 两个 linux 分支版本
 
 `windows`
 

@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "快速打包web页面到电脑应用程序",
   "main": "main.js",
+  "homepage": "/",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development electron .",
-    "start": "cross-env NODE_ENV=develop electron .",
-    "dist:win": "cross-env NODE_ENV=production electron-builder --ia32",
-    "dist:mac": "cross-env NODE_ENV=production electron-builder --mac",
-    "dist:linux": "cross-env NODE_ENV=production electron-builder --linux"
+    "start": "cd my-app && npm run start",
+    "electron": "cross-env NODE_ENV=development electron .",
+    "build": "cd my-app && npm run build",
+    "dist:win": "cross-env NODE_ENV=production npm run build && electron-builder --ia32",
+    "dist:mac": "cross-env NODE_ENV=production npm run build && electron-builder --mac",
+    "dist:linux": "cross-env NODE_ENV=production npm run build && electron-builder --linux",
+    "dist:linux:deb": "cross-env NODE_ENV=production npm run build && electron-builder --linux deb"
   },
   "keywords": [
     "electron",
@@ -17,17 +20,21 @@
     "mac",
     "linux"
   ],
-  "author": "shoujian",
+  "author": {
+    "name": "shoujian zhou",
+    "email": "863165094@qq.com"
+  },
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "electron": "11.1.1",
+    "electron": "^3.1.13",
     "electron-builder": "22.9.1"
   },
   "dependencies": {
+    "beauty-logger": "^4.7.4",
     "console-format": "^1.1.0"
   },
-  "repository": "",
+  "repository": "https://github.com/zhoushoujian/electron-template",
   "build": {
     "productName": "electron-template",
     "appId": "com.electron.app",
@@ -40,17 +47,19 @@
     "files": [
       "main.js",
       "preload.js",
-      "public/index.html"
+      "package.json",
+      "node_modules",
+      "my-app/build"
     ],
     "nsis": {
       "oneClick": false,
-      "guid": "uniqueId",
+      "guid": "electronTemplateId",
       "perMachine": true,
       "allowElevation": true,
       "allowToChangeInstallationDirectory": true,
-      "installerIcon": "./public/favicon.ico",
-      "uninstallerIcon": "./public/uninstall.ico",
-      "installerHeaderIcon": "./public/favicon.ico",
+      "installerIcon": "./my-app/public/favicon.ico",
+      "uninstallerIcon": "./my-app/public/uninstall.ico",
+      "installerHeaderIcon": "./my-app/public/favicon.ico",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "electron-template",
@@ -58,7 +67,7 @@
       "runAfterFinish": true
     },
     "win": {
-      "icon": "public/favicon.ico",
+      "icon": "my-app/public/favicon.ico",
       "target": [
         {
           "target": "nsis",
@@ -84,11 +93,11 @@
       ]
     },
     "mac": {
-      "icon": "public/favicon.png",
+      "icon": "my-app/public/favicon.png",
       "category": "./out"
     },
     "linux": {
-      "icon": "public/favicon.png",
+      "icon": "my-app/public",
       "category": "./out"
     }
   }

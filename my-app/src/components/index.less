@@ -1,0 +1,26 @@
+:root {
+  --primary-color: #fff;
+}
+
+.loading {
+  font-weight: 600;
+  font-size: 24px;
+  animation: flickerAnimation 2s infinite;
+  cursor: pointer;
+  user-select: none;
+  color: var(--primary-color);
+  transition: all 1.6s;
+  margin-top: 140px;
+}
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
